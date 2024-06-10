@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+  }
+  body .header {
+    background-color:white;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px ;
+}
+.logo img {
+    height: 100px;
+    width: 180px;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+}
+ul {
+    display: flex;
+}
+li {
+    list-style: none;
+    margin-right: 40px;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 22px;
+}
+.header ul li a:hover{
+    
+    padding: 4px 10px;
+    text-transform: uppercase;
+    color: rgb(145, 90, 239);
+    text-decoration: underline;
+}
+
+  header {
+    background-color: rgb(204, 79, 235);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  /* Ensure this file is saved as header.css in your styles directory */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+    cursor: pointer;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav ul li {
+    margin: 0;
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  .nav ul li a:hover,
+  .nav ul li a:focus {
+    color: #fff;
+    background-color: #d384d3;
+    border-radius: 5px;
+  }
+  

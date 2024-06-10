@@ -1,0 +1,172 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+.header {
+  background-color: white;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.logo img {
+  height: 100px;
+  width: 180px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header ul {
+  display: flex;
+  padding: 0;
+}
+
+.header li {
+  list-style: none;
+  margin-right: 40px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 22px;
+}
+
+.header ul li a:hover {
+  padding: 4px 10px;
+  text-transform: uppercase;
+  color: rgb(145, 90, 239);
+  text-decoration: underline;
+}
+
+/* Menu Styles */
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 350px;
+  transition: 0.3s;
+}
+
+.menu-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+}
+
+.menu-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.menu-card h2 {
+  margin: 15px 0 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu-card .price {
+  color: rgb(99, 20, 227);
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.menu-card button {
+  background: #cb89ec;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.menu-card button:hover {
+  background: #ac4be4;
+}
+
+.view-details {
+  background: #6b8e23;
+  margin-top: 10px;
+}
+
+.view-details:hover {
+  background: #556b2f;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content img {
+  width: 90%;
+  height: 20%;
+  border-radius: 10px;
+}
+
+.modal-content h3 {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-content .price {
+  font-size: 1.5em;
+  color: rgb(99, 20, 227);
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
