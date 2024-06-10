@@ -20,7 +20,6 @@ const Header = ({ cart }) => {
           <li>
             <Link to="/cart">
               <FaShoppingCart />
-              {/* Display the number of items in the cart if available */}
               {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
             </Link>
           </li>
