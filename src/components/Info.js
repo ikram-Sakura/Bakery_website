@@ -1,6 +1,6 @@
-import React from 'react'; // Import React
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import '../styles/info.css'; // Import CSS file
+import React from 'react'; 
+import { Link } from 'react-router-dom'; 
+import '../styles/info.css'; 
 
 const Info = () => {
   return (

@@ -5,7 +5,7 @@ const Checkout = ({ totalPrice }) => {
   const navigate = useNavigate();
 
   const handlePayment = () => {
-    // Implement your payment logic here, e.g., redirecting to a payment gateway
+    
     console.log('Payment processed successfully');
     navigate('/redirect-to-checkout');
   };
@@ -19,7 +19,7 @@ const Checkout = ({ totalPrice }) => {
         <button onClick={handlePayment} className="payment-button">Pay with Credit Card</button>
         <button onClick={handlePayment} className="payment-button">Pay with PayPal</button>
         <button onClick={handlePayment} className="payment-button">Pay with Apple Pay</button>
-        {/* Add more payment options as needed */}
+        
       </div>
     </div>
   );
