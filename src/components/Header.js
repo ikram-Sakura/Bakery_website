@@ -1,31 +1,70 @@
-import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa'; 
-import { Link } from 'react-router-dom';
-import '../styles/header.css';
-import logo from './Sweet Cake.png';
+// components/Header.js (NEW)
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ShoppingCart, Menu, X } from 'lucide-react';
+import { useCart } from '../context/CartContext';
+import '../styles/Header.css';
 
-const Header = ({ cart }) => {
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { getTotalItems } = useCart();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
   return (
-    <header className="header">
-      <div className="logo">
-        <img src={logo} width="150px" height="100px" style={{ cursor: 'pointer' }} alt="Sweet Cake" />
-      </div>
-      <nav className="nav">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-          <li><Link to="/info">Info</Link></li>
-          <li>
-            <Link to="/cart">
-              <FaShoppingCart />
-              {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="header-content">
+          <Link to="/" className="logo">
+            <div className="logo-icon">🎂</div>
+            <span className="logo-text">Sweet Cake</span>
+          </Link>
+
+          <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>
+            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+              Home
             </Link>
-          </li>
-        </ul>
-      </nav>
-      
+            <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
+              About
+            </Link>
+            <Link to="/products" className={location.pathname === '/products' ? 'active' : ''}>
+              Products
+            </Link>
+            <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
+              Contact
+            </Link>
+          </nav>
+
+          <div className="header-actions">
+            <Link to="/cart" className="cart-btn">
+              <ShoppingCart size={24} />
+              {getTotalItems() > 0 && (
+                <span className="cart-badge">{getTotalItems()}</span>
+              )}
+            </Link>
+
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };

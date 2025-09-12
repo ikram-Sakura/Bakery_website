@@ -1,87 +1,171 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f2f2f2;
-  }
-  body .header {
-    background-color:white;
-    height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px ;
-}
-.logo img {
-    height: 100px;
-    width: 180px;
-    
-    background-repeat: no-repeat;
-    background-size: contain;
-    
-}
-ul {
-    display: flex;
-}
-li {
-    list-style: none;
-    margin-right: 40px;
-}
-a {
-    text-decoration: none;
-    color: #333;
-    font-size: 22px;
-}
-.header ul li a:hover{
-    
-    padding: 4px 10px;
-    text-transform: uppercase;
-    color: rgb(145, 90, 239);
-    text-decoration: underline;
-}
-
-  header {
-    background-color: rgb(204, 79, 235);
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  /* Ensure this file is saved as header.css in your styles directory */
-
+/* components/Header.css */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: var(--transition);
+  padding: 20px 0;
+}
+
+.header.scrolled {
+  padding: 15px 0;
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 32px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: var(--transition);
+  padding: 8px 0;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+  border-radius: 1px;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-btn {
+  position: relative;
+  color: var(--dark);
+  transition: var(--transition);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn:hover {
+  color: var(--primary);
+  background: var(--light);
+  transform: scale(1.1);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--dark);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+  background: var(--light);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    padding: 30px;
+    gap: 25px;
+    box-shadow: var(--shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+    padding: 12px 0;
+  }
+
+  .mobile-menu-btn {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
   }
-  
-  .logo img {
-    cursor: pointer;
-  }
-  
-  .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .nav ul li {
-    margin: 0;
-  }
-  
-  .nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 10px 15px;
-    transition: color 0.3s, background-color 0.3s;
-  }
-  
-  .nav ul li a:hover,
-  .nav ul li a:focus {
-    color: #fff;
-    background-color: #d384d3;
-    border-radius: 5px;
-  }
-  
+}

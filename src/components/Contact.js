@@ -1,81 +1,167 @@
-import React from 'react';
-//import { Link } from 'react-router-dom'; 
-import '../styles/contact.css';
+// components/Contact.js (NEW)
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import '../styles/Contact.css';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message! We will get back to you soon.');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
-    <div>
-     
-
+    <div className="contact-page">
       <div className="container">
-        <div className="form">
-          <div className="contact-info">
-            <h3 className="title">Let's get in touch</h3>
-            <p className="text">
-              Sweet Cake Bakery is located at 123 Main Street, in the heart of downtown.
-              For more information, feel free to contact us anytime.
-            </p>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="contact-header"
+        >
+          <h1 className="section-title">Get in Touch</h1>
+          <p className="section-subtitle">
+            We'd love to hear from you! Send us a message and we'll respond as soon as possible.
+          </p>
+        </motion.div>
 
-            <div className="info">
-              <div className="information">
-                <p>Email: sweetcakebakery@gmail.com</p>
+        <div className="contact-content">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="contact-info"
+          >
+            <h2>Contact Information</h2>
+            <p>Feel free to reach out to us for any questions, custom orders, or just to say hello!</p>
+            
+            <div className="contact-details">
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p>sweetcakebakery@gmail.com</p>
+                </div>
               </div>
-
-              <div className="information">
-                <p> {' Phone Number : '}05 10 12 37 95</p>
+              
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <Phone size={24} />
+                </div>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+1 (555) 123-CAKE</p>
+                </div>
+              </div>
+              
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h4>Address</h4>
+                  <p>123 Bakery Street, Sweet City, SC 12345</p>
+                </div>
               </div>
             </div>
-
-            <div className="social-media">
-              <p>Connect with us :</p>
+            
+            <div className="social-links">
+              <h4>Follow Us</h4>
               <div className="social-icons">
-                <a href="ikram">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="ikram">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="ikram">
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a href="ikram">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
+                <a href="#" className="social-link">Facebook</a>
+                <a href="#" className="social-link">Instagram</a>
+                <a href="#" className="social-link">Twitter</a>
               </div>
-              <br />
-              <div className="credit">Made with <span style={{ color: 'tomato' }}>❤</span> by SweetCake</div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="contact-form">
-            <span className="circle one"></span>
-            <span className="circle two"></span>
-
-            <form action="index.html" autoComplete="off">
-              <h3 className="title">Contact us</h3>
-              <div className="input-container">
-                <input type="text" name="name" className="input" />
-                <label htmlFor="name">Username</label>
-                <span>Username</span>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="contact-form-container"
+          >
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="form-input"
+                  placeholder="Enter your full name"
+                />
               </div>
-              <div className="input-container">
-                <input type="email" name="email" className="input" />
-                <label htmlFor="email">Email</label>
-                <span>Email</span>
+              
+              <div className="form-group">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="form-input"
+                  placeholder="Enter your email address"
+                />
               </div>
-              <div className="input-container">
-                <input type="tel" name="phone" className="input" />
-                <label htmlFor="phone">Phone</label>
-                <span>Phone</span>
+              
+              <div className="form-group">
+                <label htmlFor="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="form-input"
+                  placeholder="Enter your phone number"
+                />
               </div>
-              <div className="input-container textarea">
-                <textarea name="message" className="input"></textarea>
+              
+              <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <span>Message</span>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="5"
+                  className="form-textarea"
+                  placeholder="Tell us how we can help you..."
+                ></textarea>
               </div>
-              <input type="submit" value="Send" className="btn" />
+              
+              <button type="submit" className="btn btn-primary submit-btn">
+                <Send size={20} />
+                Send Message
+              </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
