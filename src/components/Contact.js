@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import '../styles/Contact.css';
 
 const Contact = () => {
@@ -87,9 +88,9 @@ const Contact = () => {
             <div className="social-links">
               <h4>Follow Us</h4>
               <div className="social-icons">
-                <a href="#" className="social-link">Facebook</a>
-                <a href="#" className="social-link">Instagram</a>
-                <a href="#" className="social-link">Twitter</a>
+                <a href="#" className="social-link"><FaFacebook /></a>
+                <a href="#" className="social-link"><FaInstagram /></a>
+                <a href="#" className="social-link"><FaTwitter /></a>
               </div>
             </div>
           </motion.div>
