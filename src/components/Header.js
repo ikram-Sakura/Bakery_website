@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import '../styles/Header.css';
+import '../styles/header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
