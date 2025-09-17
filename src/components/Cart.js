@@ -1,4 +1,3 @@
-// components/Cart.js (NEW)
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';

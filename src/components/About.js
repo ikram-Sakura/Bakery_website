@@ -1,4 +1,3 @@
-// components/About.js (NEW)
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Users, Heart, Clock } from 'lucide-react';

@@ -1,4 +1,3 @@
-// components/Products.js (NEW)
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Plus, Eye, ShoppingCart } from 'lucide-react';

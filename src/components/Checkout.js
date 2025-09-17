@@ -1,4 +1,3 @@
-// components/Checkout.js (CORRECTED)
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCart } from '../context/CartContext';

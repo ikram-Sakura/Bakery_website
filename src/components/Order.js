@@ -1,4 +1,3 @@
-// components/Order.js (NEW)
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, User, Cake } from 'lucide-react';
