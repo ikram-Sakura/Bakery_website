@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import '../styles/Contact.css';
+import '../styles/contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
