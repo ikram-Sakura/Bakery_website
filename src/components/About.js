@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Users, Heart, Clock } from 'lucide-react';
-import '../styles/About.css';
+import '../styles/about.css';
 
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
