@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Plus, Eye, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import '../styles/Products.css';
+import '../styles/products.css';
 
 const menuItems = [ 
   { 
