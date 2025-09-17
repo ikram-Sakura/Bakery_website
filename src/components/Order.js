@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, User, Cake } from 'lucide-react';
-import '../styles/Order.css';
+import '../styles/order.css';
 
 const Order = () => {
   const [formData, setFormData] = useState({
