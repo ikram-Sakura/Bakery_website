@@ -29,13 +29,13 @@ const Footer = () => {
               and the finest ingredients.
             </p>
             <div className="social-links">
-  <a href="#" className="social-link" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.facebook.com" className="social-link" target="_blank" rel="noopener noreferrer">
     <FaFacebook size={20} />
   </a>
-  <a href="#" className="social-link" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.instagram.com" className="social-link" target="_blank" rel="noopener noreferrer">
     <FaInstagram size={20} />
   </a>
-  <a href="#" className="social-link" target="_blank" rel="noopener noreferrer">
+  <a href="https://twitter.com" className="social-link" target="_blank" rel="noopener noreferrer">
     <FaTwitter size={20} />
   </a>
 </div>

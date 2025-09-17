@@ -14,7 +14,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
     alert('Thank you for your message! We will get back to you soon.');
     setFormData({ name: '', email: '', phone: '', message: '' });
@@ -87,9 +86,9 @@ const Contact = () => {
             <div className="social-links">
               <h4>Follow Us</h4>
               <div className="social-icons">
-                <a href="#" className="social-link"><FaFacebook /></a>
-                <a href="#" className="social-link"><FaInstagram /></a>
-                <a href="#" className="social-link"><FaTwitter /></a>
+                <a href="https://www.facebook.com" className="social-link"><FaFacebook /></a>
+                <a href="https://www.instagram.com" className="social-link"><FaInstagram /></a>
+                <a href="https://twitter.com" className="social-link"><FaTwitter /></a>
               </div>
             </div>
           </motion.div>
