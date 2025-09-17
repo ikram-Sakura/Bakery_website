@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Truck, Heart, Shield, Palette, Leaf } from 'lucide-react';
-import '../styles/Home.css';
+import '../styles/home.css';
 
 const Home = () => {
   const features = [
